@@ -1,0 +1,32 @@
+* {
+  font-family: 'Times New Roman', Times, serif;
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  background: url("../img/background.png");
+  width: 100%;
+  height: 100vh;
+}
+
+.wrapper .header {
+  width: 100%;
+  height: 70px;
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
+.wrapper .contentWrapper .mainPageTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 48px;
+  color: chartreuse;
+}
+/*# sourceMappingURL=style.css.map */

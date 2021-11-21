@@ -1,0 +1,27 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    background: url("../img/background.png");
+    width: 100%;
+    height: 100vh;
+
+    .header {
+        width: 100%;
+        height: 70px;
+        background-color: rgba($color: grey, $alpha: 0.2);
+    }
+    .contentWrapper {
+        .mainPageTitle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: chartreuse;
+        }
+    }
+}
+
