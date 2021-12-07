@@ -1,22 +1,74 @@
 * {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Palatino Linotype', Times, serif;
   padding: 0;
   margin: 0;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  width: 0;
 }
 
 .wrapper {
-  background: url("../img/background.png");
+  background: black url(/img/background.jpg) repeat 50% 0px;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
 
 .wrapper .header {
   width: 100%;
-  height: 70px;
-  background-color: rgba(128, 128, 128, 0.2);
+  height: 6%;
+  background-color: black;
+  -webkit-box-shadow: 2px 2px 8px 0px #b1a16e;
+          box-shadow: 2px 2px 8px 0px #b1a16e;
 }
 
-.wrapper .contentWrapper .mainPageTitle {
+.wrapper .contentWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 94%;
+}
+
+.wrapper .contentWrapper > * {
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-top: 15px;
+  color: #b4b4b4;
+}
+
+.wrapper .contentWrapper .mediaBlock {
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+  overflow: auto;
+}
+
+.wrapper .contentWrapper .mediaBlock > * {
+  width: 90%;
+  display: block;
+  margin: 5% auto;
+}
+
+.wrapper .contentWrapper .line {
+  width: 5px;
+  background: radial-gradient(#b1a16e, rgba(0, 0, 0, 0));
+  border-radius: 30%;
+}
+
+.wrapper .contentWrapper .rigthBlock {
+  -ms-flex-preferred-size: 75%;
+      flex-basis: 75%;
+  overflow: scroll;
+  height: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: #b1a16e #b4b4b4;
+}
+
+.wrapper .contentWrapper .rigthBlock .mainPageTitle {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27,6 +79,33 @@
       -ms-flex-pack: center;
           justify-content: center;
   font-size: 48px;
-  color: chartreuse;
+  color: #b1a16e;
+}
+
+.wrapper .contentWrapper .rigthBlock .content {
+  font-size: 14pt;
+  text-align: justify;
+  height: 100%;
+}
+
+.wrapper .contentWrapper .rigthBlock .content > p {
+  padding: 10px 15px;
+}
+
+.wrapper .contentWrapper .rigthBlock .content img {
+  max-height: 50%;
+  margin: 5px auto;
+  display: block;
+  border-radius: 5%;
+}
+
+#smokeCanvas {
+  pointer-events: none;
+  height: 800px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 800px;
+  position: absolute;
+  bottom: 0;
 }
 /*# sourceMappingURL=style.css.map */
