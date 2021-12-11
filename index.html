@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="./scss/style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Мифические истории Санкт-Петербурга</title>
+</head>
+<body>
+<div class="mainPage_wrapper">
+    <div class="mainPage_header">
+        Мифические истории Санкт-Петербурга
+    </div>
+    <div class="mainPage_mapWrapper">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080" preserveAspectRatio="xMinYMin meet" >
+          <!-- set your background image -->
+          <image width="1920" height="1080" xlink:href="/img/Map.svg" />
+            <g transform=translate(780,710)scale(0.2)>
+              <path d="M 100 100 L 300 100 L 200 300 z" fill="red" stroke="blue" stroke-width="3" />
+            </g>
+          <g class="hover_group" opacity="0">
+            <a href="Rotonda.html">
+              <text x="772" y="815" font-size="30" fill="#ff0000">Ротонда</text>
+              <rect x="786" y="725" opacity="0" width="70" height="70"></rect>
+            </a>
+          </g>
+          <g transform=translate(1160,615)scale(0.2)>
+            <path d="M 100 100 L 300 100 L 200 300 z" fill="red" stroke="blue" stroke-width="3" />
+          </g>
+          <g class="hover_group" opacity="0">
+            <a href="MihZamok.html">
+            <text x="1070" y="713" font-size="30" fill="#ff0000">Михайловский замок</text>
+            <rect x="1165" y="630" opacity="0" width="70" height="70"></rect>
+            </a>
+          </g>
+          <g transform=translate(1428,578)scale(0.2)>
+            <path d="M 100 100 L 300 100 L 200 300 z" fill="red" stroke="blue" stroke-width="3" />
+          </g>
+          <g class="hover_group" opacity="0">
+            <a href="LitMost.html">
+            <text x="1370" y="663" font-size="30" fill="#ff0000">Литейный мост</text>
+            <rect x="1425" y="580" opacity="0" width="90" height="70"></rect>
+            </a>
+          </g>
+          <g transform=translate(710,435)scale(0.2)>
+            <path d="M 100 100 L 300 100 L 200 300 z" fill="red" stroke="blue" stroke-width="3" />
+          </g>
+          <g class="hover_group" opacity="0">
+            <a href="Sphinx.html">
+            <text x="690" y="530" font-size="30" fill="#ff0000">Сфинксы</text>
+            <rect x="726" y="460" opacity="0" width="50" height="50"></rect>
+            </a>
+          </g>
+          <g transform=translate(670,400)scale(0.2)>
+            <path d="M 100 100 L 300 100 L 200 300 z" fill="red" stroke="blue" stroke-width="3" />
+          </g>
+          <g class="hover_group" opacity="0">
+            <a href="Bashnya.html">
+            <text x="600" y="410" font-size="30" fill="#ff0000">Башня Гриффонов</text>
+            <rect x="685" y="415" opacity="0" width="50" height="50"></rect>
+            </a>
+          </g>
+            </svg>
+    </div>
+    <div class="mainPage_contentWrapper">
+        <div class="mainContentTitle">asd</div>
+    </div>
+
+</div>
+<!-- Для визуальных эффектов (дыма, свечения курсора) -->
+<canvas id="smokeCanvas" height="800px" width="800px"></canvas>
+<div id="lamp"></div>
+<script src="smoke.js"></script>
+</body>
+</html>

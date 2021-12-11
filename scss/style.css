@@ -1,4 +1,11 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "Franklin Gothic Medium";
+  src: url("../fonts/franklin-gothic-medium.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   font-family: 'Palatino Linotype', Times, serif;
   padding: 0;
@@ -210,18 +217,43 @@
   background: radial-gradient(rgba(255, 255, 255, 0.2) 0%, transparent 70%);
 }
 
+.mainPage_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: black url(/img/background.jpg) repeat 50% 0px;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.mainPage_wrapper .mainPage_header {
+  font-family: "Franklin Gothic Medium";
+  color: white;
+  margin: 20px auto;
+  font-size: 30px;
+}
+
+.mainPage_wrapper .mainPage_mapWrapper {
+  width: 80%;
+}
+
+.mainPage_wrapper .mainPage_contentWrapper .mainContentTitle {
+  color: burlywood;
+}
+
 .hover_group:hover {
   opacity: 1;
 }
 
-#projectsvg {
-  position: relative;
-  width: 100%;
-  padding-bottom: 77%;
-  vertical-align: middle;
-  margin: 0;
-  overflow: hidden;
-}
 #projectsvg svg {
   display: inline-block;
   position: absolute;
