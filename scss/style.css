@@ -137,4 +137,23 @@
   height: 150px;
   background: radial-gradient(rgba(255, 255, 255, 0.2) 0%, transparent 70%);
 }
+
+.hover_group:hover {
+  opacity: 1;
+}
+
+#projectsvg {
+  position: relative;
+  width: 100%;
+  padding-bottom: 77%;
+  vertical-align: middle;
+  margin: 0;
+  overflow: hidden;
+}
+#projectsvg svg {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 /*# sourceMappingURL=style.css.map */
