@@ -1,27 +1,127 @@
 * {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Palatino Linotype', Times, serif;
     padding: 0;
     margin: 0;
+    scrollbar-width: none;
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0;
 }
 
 .wrapper {
-    background: url("../img/background.png");
+    background: black url(/img/background.jpg) repeat 50% 0px;
     width: 100%;
     height: 100vh;
+    overflow: hidden;
+    position: relative;
 
     .header {
         width: 100%;
-        height: 70px;
-        background-color: rgba($color: grey, $alpha: 0.2);
-    }
-    .contentWrapper {
-        .mainPageTitle {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 48px;
-            color: chartreuse;
+        height: 6%;
+        background-color: rgba($color: rgb(0, 0, 0), $alpha: 1);
+        box-shadow: 2px 2px 8px 0px #b1a16e;
+
+        & > img {
+            height: 80%;
         }
+    }
+    
+    .contentWrapper {
+        display: flex;
+        justify-content: space-between;
+        height: 94%;
+
+        & > * {
+            background-color: rgba($color: rgb(0, 0, 0), $alpha: 0.5);
+            margin-top: 15px;
+            color:rgb(180, 180, 180);
+        }
+
+        .mediaBlock {
+            flex-basis: 25%;
+            overflow: auto;
+
+            & > * {
+                width: 90%;
+                display: block;
+                margin: 5% auto;
+            }
+        }
+
+        .line {
+            width: 5px;
+            background: radial-gradient(#b1a16e, rgba(0, 0, 0, 0));
+            border-radius: 30%;
+        }
+
+        .rigthBlock {
+            flex-basis: 75%;
+            overflow-y: scroll;
+            height: 100%;
+            scrollbar-width: thin;
+            scrollbar-color: #b1a16e #b4b4b4;
+            
+            &::-webkit-scrollbar {
+                width: 8px; 
+            }
+
+            &::-webkit-scrollbar-track {
+                background: #b4b4b4;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: #b1a16e;
+            }
+
+            .mainPageTitle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 48px;
+                color: #b1a16e
+            }
+
+            .content {
+                font-size: 14pt;
+                text-align: justify;
+                height: 100%;
+                
+                & > p {
+                    padding: 10px 15px;
+                }
+
+                img {
+                    max-height: 50%;
+                    margin: 5px auto;
+                    display: block;
+                    border-radius: 5%;
+                }
+            }
+        }
+        
     }
 }
 
+/* Для визуальных эффеков (дым, свечение курсора) */
+#smokeCanvas
+{
+    pointer-events: none;
+    height:800px;
+    width:100%;
+    max-width:100%;
+    min-width:800px;
+    position:absolute;
+    bottom:0;
+}
+
+#lamp {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(rgba(255,255,255,0.2) 0%, transparent 70%);
+}
