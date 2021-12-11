@@ -42,11 +42,22 @@
         .mediaBlock {
             flex-basis: 25%;
             overflow: auto;
+            margin: 5px auto;
 
-            & > * {
-                width: 90%;
-                display: block;
-                margin: 5% auto;
+            & > div {
+
+                & > p {
+                    text-align: center;
+                    margin-top: 0;
+                    color: #b1a16e;
+                    font-size: 13pt;
+                }
+
+                & > * {
+                    width: 90%;
+                    display: block;
+                    margin: 15px auto 0;
+                }
             }
         }
 
@@ -59,7 +70,6 @@
         .rigthBlock {
             flex-basis: 75%;
             overflow-y: scroll;
-            height: 100%;
             scrollbar-width: thin;
             scrollbar-color: #b1a16e #b4b4b4;
             
@@ -80,27 +90,88 @@
                 align-items: center;
                 justify-content: center;
                 font-size: 48px;
-                color: #b1a16e
+                color: #b1a16e;
+                text-align: center;
+                line-height: 1.2;
             }
 
             .content {
                 font-size: 14pt;
                 text-align: justify;
-                height: 100%;
-                
-                & > p {
-                    padding: 10px 15px;
+                padding: 0 15px;
+
+                & > * {
+                    margin: 10px auto;
                 }
 
-                img {
-                    max-height: 50%;
-                    margin: 5px auto;
+                & > img {
+                    max-height: 80vh;
+                    max-width: 100%;
                     display: block;
-                    border-radius: 5%;
+                    border-radius: 10px;
+                }
+
+                // Для размещения нескольких изображений в ряд
+                .imageBlock {
+                    border-radius: 10px;
+                    display: flex;
+                    justify-content: space-between;
+
+                    & > * {
+                        flex: 1;
+                    }
                 }
             }
         }
         
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .wrapper {
+        overflow-y: scroll;
+
+        .contentWrapper {
+            flex-direction: column;
+            height: auto;
+
+            .mediaBlock {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                
+                & > * {
+                    flex: 0 0 40%;
+                }
+            }
+
+            .line {
+                height: 5px;
+                width: 90%;
+                margin: auto;
+            }
+
+            .rigthBlock {
+                overflow-y: hidden;
+
+                .mainPageTitle {
+                    font-size: 40px;
+                }
+
+                .content {
+
+                    // Для размещения нескольких изображений в ряд
+                    .imageBlock {
+                        flex-wrap: nowrap;
+                        overflow-x: auto;
+
+                        & > * {
+                            flex: 0 0 80%;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
