@@ -51,12 +51,20 @@
   -ms-flex-preferred-size: 25%;
       flex-basis: 25%;
   overflow: auto;
+  margin: 5px auto;
 }
 
-.wrapper .contentWrapper .mediaBlock > * {
+.wrapper .contentWrapper .mediaBlock > div > p {
+  text-align: center;
+  margin-top: 0;
+  color: #b1a16e;
+  font-size: 13pt;
+}
+
+.wrapper .contentWrapper .mediaBlock > div > * {
   width: 90%;
   display: block;
-  margin: 5% auto;
+  margin: 15px auto 0;
 }
 
 .wrapper .contentWrapper .line {
@@ -69,7 +77,6 @@
   -ms-flex-preferred-size: 75%;
       flex-basis: 75%;
   overflow-y: scroll;
-  height: 100%;
   scrollbar-width: thin;
   scrollbar-color: #b1a16e #b4b4b4;
 }
@@ -98,23 +105,88 @@
           justify-content: center;
   font-size: 48px;
   color: #b1a16e;
+  text-align: center;
+  line-height: 1.2;
 }
 
 .wrapper .contentWrapper .rigthBlock .content {
   font-size: 14pt;
   text-align: justify;
-  height: 100%;
+  padding: 0 15px;
 }
 
-.wrapper .contentWrapper .rigthBlock .content > p {
-  padding: 10px 15px;
+.wrapper .contentWrapper .rigthBlock .content > * {
+  margin: 10px auto;
 }
 
-.wrapper .contentWrapper .rigthBlock .content img {
-  max-height: 50%;
-  margin: 5px auto;
+.wrapper .contentWrapper .rigthBlock .content > img {
+  max-height: 80vh;
+  max-width: 100%;
   display: block;
-  border-radius: 5%;
+  border-radius: 10px;
+}
+
+.wrapper .contentWrapper .rigthBlock .content .imageBlock {
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrapper .contentWrapper .rigthBlock .content .imageBlock > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper {
+    overflow-y: scroll;
+  }
+  .wrapper .contentWrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+  }
+  .wrapper .contentWrapper .mediaBlock {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  .wrapper .contentWrapper .mediaBlock > * {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 40%;
+            flex: 0 0 40%;
+  }
+  .wrapper .contentWrapper .line {
+    height: 5px;
+    width: 90%;
+    margin: auto;
+  }
+  .wrapper .contentWrapper .rigthBlock {
+    overflow-y: hidden;
+  }
+  .wrapper .contentWrapper .rigthBlock .mainPageTitle {
+    font-size: 40px;
+  }
+  .wrapper .contentWrapper .rigthBlock .content .imageBlock {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  .wrapper .contentWrapper .rigthBlock .content .imageBlock > * {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 80%;
+            flex: 0 0 80%;
+  }
 }
 
 /* Для визуальных эффеков (дым, свечение курсора) */
@@ -156,4 +228,10 @@
   top: 0;
   left: 0;
 }
+
+.content iframe {
+  margin: 0 auto;
+  display:block;
+}
+
 /*# sourceMappingURL=style.css.map */
