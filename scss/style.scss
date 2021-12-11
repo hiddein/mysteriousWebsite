@@ -3,12 +3,12 @@
     padding: 0;
     margin: 0;
     scrollbar-width: none;
+    overflow: hidden;
 }
 
 ::-webkit-scrollbar {
     width: 0;
 }
-
 
 .wrapper {
     background: black url(/img/background.jpg) repeat 50% 0px;
@@ -22,6 +22,10 @@
         height: 6%;
         background-color: rgba($color: rgb(0, 0, 0), $alpha: 1);
         box-shadow: 2px 2px 8px 0px #b1a16e;
+
+        & > img {
+            height: 80%;
+        }
     }
     
     .contentWrapper {
@@ -54,10 +58,22 @@
 
         .rigthBlock {
             flex-basis: 75%;
-            overflow: scroll;
+            overflow-y: scroll;
             height: 100%;
             scrollbar-width: thin;
             scrollbar-color: #b1a16e #b4b4b4;
+            
+            &::-webkit-scrollbar {
+                width: 8px; 
+            }
+
+            &::-webkit-scrollbar-track {
+                background: #b4b4b4;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: #b1a16e;
+            }
 
             .mainPageTitle {
                 display: flex;
@@ -88,6 +104,7 @@
     }
 }
 
+/* Для визуальных эффеков (дым, свечение курсора) */
 #smokeCanvas
 {
     pointer-events: none;
@@ -97,4 +114,14 @@
     min-width:800px;
     position:absolute;
     bottom:0;
+}
+
+#lamp {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(rgba(255,255,255,0.2) 0%, transparent 70%);
 }

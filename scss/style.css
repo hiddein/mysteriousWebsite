@@ -1,8 +1,10 @@
+@charset "UTF-8";
 * {
   font-family: 'Palatino Linotype', Times, serif;
   padding: 0;
   margin: 0;
   scrollbar-width: none;
+  overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -23,6 +25,10 @@
   background-color: black;
   -webkit-box-shadow: 2px 2px 8px 0px #b1a16e;
           box-shadow: 2px 2px 8px 0px #b1a16e;
+}
+
+.wrapper .header > img {
+  height: 80%;
 }
 
 .wrapper .contentWrapper {
@@ -62,10 +68,22 @@
 .wrapper .contentWrapper .rigthBlock {
   -ms-flex-preferred-size: 75%;
       flex-basis: 75%;
-  overflow: scroll;
+  overflow-y: scroll;
   height: 100%;
   scrollbar-width: thin;
   scrollbar-color: #b1a16e #b4b4b4;
+}
+
+.wrapper .contentWrapper .rigthBlock::-webkit-scrollbar {
+  width: 8px;
+}
+
+.wrapper .contentWrapper .rigthBlock::-webkit-scrollbar-track {
+  background: #b4b4b4;
+}
+
+.wrapper .contentWrapper .rigthBlock::-webkit-scrollbar-thumb {
+  background-color: #b1a16e;
 }
 
 .wrapper .contentWrapper .rigthBlock .mainPageTitle {
@@ -99,6 +117,7 @@
   border-radius: 5%;
 }
 
+/* Для визуальных эффеков (дым, свечение курсора) */
 #smokeCanvas {
   pointer-events: none;
   height: 800px;
@@ -107,5 +126,15 @@
   min-width: 800px;
   position: absolute;
   bottom: 0;
+}
+
+#lamp {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(rgba(255, 255, 255, 0.2) 0%, transparent 70%);
 }
 /*# sourceMappingURL=style.css.map */

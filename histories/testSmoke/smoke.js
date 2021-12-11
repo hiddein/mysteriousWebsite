@@ -1,7 +1,4 @@
 // Настройки анимации дымка
-// Параметры канваса
-// canvasWidth = 1600;
-// canvasHeight = 800;
 // Число частиц в одной сцене
 var particlesPerPuff = 1200;
 // Задержка между появлением соседних частиц (мс.)
@@ -14,16 +11,17 @@ var smokeImage = new Image();
 smokeImage.src = img;
 var c = document.getElementById("smokeCanvas");
 
-// Генерация частиц для сцены
+// Генерация массива с частицами для сцены
 pCount = 0;
 var beginTime = new Date().getTime()
 for (var i2 = 0; i2 < particlesPerPuff; i2++) {
     pCollection[pCount++] = newParticle(i2 * particleDelay + beginTime);
 }
 
-
+// Запуск отрисовки частиц
 draw()
 
+/// Создание частицы для сцены и настройка ее параметров случайным образом
 function newParticle(delay) {
 
     var p = {};
@@ -32,7 +30,7 @@ function newParticle(delay) {
 
     p.start = delay;
     p.life = 8000;
-    p.speedUp = 40; //30
+    p.speedUp = 40;
 
     p.speedRight = randBetween(0, 20);
 
@@ -51,30 +49,30 @@ function newParticle(delay) {
 
 }
 
+/// Запуск откисовки сцены
 function draw() {
-    //Grab and clear the canvas
+    // Очистка canvas
     var ctx = c.getContext("2d");
     ctx.clearRect(0, 0, c.width, c.height);
     c.width = c.width;
 
-    //Loop through particles
+    // Отрисовка поочередно каждой частицы на сцене 
     for (var i = 0; i < pCount; i++) {
-        //Grab the particle
         var p = pCollection[i];
 
-        //Timing
+        // Определение времени
         var td = new Date().getTime() - p.start;
         var frac = td / p.life
 
         if (td > 0) {
-            /// Если частица "умерла", то генерируем ей замену
+            // Если частица "умерла", то генерируем ей замену
             if ( td > p.life ) {
                 // Новое время появления частицы = старое время появления + длительность сцены
                 pCollection[i] = newParticle( (particlesPerPuff - 1) * particleDelay + pCollection[i].start ); 
                 continue;
             }
 
-            //attributes that change over time
+            // расчет новых параметров частицы в новом кадре
             var newTop = p.top - (p.speedUp * (td / 1000));
             var newLeft = p.left + (p.speedRight * (td / 1000));
             var newOpacity = Math.max(p.startOpacity * (1 - frac), 0);
@@ -83,25 +81,26 @@ function draw() {
             p.newTop = newTop;
             p.newLeft = newLeft;
 
-            //Draw!
+            // Отрисовка
             ctx.fillStyle = 'rgba(150,150,150,' + newOpacity + ')';
             ctx.globalAlpha = newOpacity;
             ctx.drawImage(smokeImage, newLeft, newTop, newSize, newSize);
         }
     }
-
+    // Запуск анимации для отрисовки нового кадра
     requestAnimationFrame(function () { draw(); });
 }
 
+/// Генерация случайного числа из заданного диапазона
 function randBetween(n1, n2) {
     var r = (Math.random() * (n2 - n1)) + n1;
     return r;
 }
 
-
+/// Свечение под курсором мыши
 document.addEventListener('mousemove',e => {
-    var ctx = c.getContext("2d");
-    ctx.fillStyle = 'rgba(150,150,150,' + 1 + ')';
-    ctx.globalAlpha = 1;
-    ctx.drawImage(smokeImage, e.pageX, e.pageY, 60, 60);
+    var lamp = document.getElementById("lamp");
+    lamp.style.top = e.pageY + "px";
+    lamp.style.left = e.pageX + "px";
+    lamp.style.transform = "translate(-50%,-50%)"
   })
