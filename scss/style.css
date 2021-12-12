@@ -6,6 +6,10 @@
   font-style: normal;
 }
 
+body {
+  cursor: url("../cursor.cur"), progress !important;
+}
+
 * {
   font-family: 'Palatino Linotype', Times, serif;
   padding: 0;
