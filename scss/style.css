@@ -58,6 +58,21 @@ body {
   color: #b4b4b4;
 }
 
+.wrapper .contentWrapper h1, .wrapper .contentWrapper h2 {
+  color: #b1a16e;
+  margin-top: 15px;
+}
+
+.wrapper .contentWrapper h1 {
+  text-align: center;
+  font-size: 1.3em;
+}
+
+.wrapper .contentWrapper h2 {
+  font-size: 1.1em;
+  text-decoration: underline;
+}
+
 .wrapper .contentWrapper .mediaBlock {
   -ms-flex-preferred-size: 25%;
       flex-basis: 25%;
@@ -78,10 +93,63 @@ body {
   margin: 15px auto 0;
 }
 
-.wrapper .contentWrapper .line {
+.wrapper .contentWrapper .mediaBlock > div a {
+  position: relative;
+}
+
+.wrapper .contentWrapper .mediaBlock > div a img {
+  max-width: 100%;
+  height: 100%;
+}
+
+.wrapper .contentWrapper .mediaBlock > div a .linkButton {
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  -webkit-transition: all 0.38s ease-in-out;
+  transition: all 0.38s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .contentWrapper .mediaBlock > div a .linkButton div {
+  padding: 10px;
+  -webkit-transition: all 0.38s ease-in-out;
+  transition: all 0.38s ease-in-out;
+  color: #b1a16e;
+  border: 5px #b1a16e solid;
+}
+
+.wrapper .contentWrapper .mediaBlock > div a .linkButton:hover {
+  opacity: 100%;
+}
+
+.wrapper .contentWrapper .mediaBlock > div a .linkButton:hover div:hover {
+  background-color: #b1a16e;
+  color: white;
+}
+
+.wrapper .contentWrapper .line, .wrapper .contentWrapper .horizontalLine {
   width: 5px;
   background: radial-gradient(#b1a16e, rgba(0, 0, 0, 0));
   border-radius: 30%;
+}
+
+.wrapper .contentWrapper .horizontalLine {
+  height: 5px;
+  width: 90%;
+  margin: auto;
 }
 
 .wrapper .contentWrapper .rigthBlock {
@@ -138,6 +206,7 @@ body {
 }
 
 .wrapper .contentWrapper .rigthBlock .content .imageBlock {
+  max-height: 50vh;
   border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -148,9 +217,8 @@ body {
 }
 
 .wrapper .contentWrapper .rigthBlock .content .imageBlock > * {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media screen and (max-width: 900px) {
@@ -168,6 +236,9 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
     overflow-x: auto;
@@ -176,6 +247,22 @@ body {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 40%;
             flex: 0 0 40%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .wrapper .contentWrapper .mediaBlock > * > *:not(p) {
+    border-bottom: #b1a16e 2px solid;
+    border-top: #b1a16e 2px solid;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
   }
   .wrapper .contentWrapper .line {
     height: 5px;
@@ -221,6 +308,7 @@ body {
   background: radial-gradient(rgba(255, 255, 255, 0.2) 0%, transparent 70%);
 }
 
+/* Main page */
 .mainPage_wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -263,5 +351,30 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+/* Для fancybox галереи */
+.boardGallery {
+  height: 580px;
+  position: relative;
+}
+
+.boardGallery .pic {
+  position: absolute;
+  border: 5px solid #EEEEEE;
+  border-bottom: 18px solid #eeeeee;
+  -webkit-box-shadow: 2px 2px 3px #333333;
+          box-shadow: 2px 2px 3px #333333;
+}
+
+.boardGallery .pic * {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.boardGallery .pic a {
+  text-indent: -999px;
+  display: block;
 }
 /*# sourceMappingURL=style.css.map */
