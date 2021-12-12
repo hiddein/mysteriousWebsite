@@ -104,3 +104,25 @@ document.addEventListener('mousemove',e => {
     lamp.style.left = e.pageX + "px";
     lamp.style.transform = "translate(-50%,-50%)"
   })
+
+
+  /// Создание эффектов при наведении на ссылку в медиа блоке
+  let links = document.querySelectorAll(".mediaBlock a");
+
+
+  links.forEach( elem => {
+
+    elem.onclick = (p) => {
+        p.preventDefault();
+        window.open(elem.href, '_blank');
+    }
+
+    let textLink = document.createElement("div");
+    textLink.innerHTML = "Перейти по ссылке";
+  
+    let upperBlock = document.createElement("div");
+    upperBlock.classList.add("linkButton");
+    upperBlock.appendChild(textLink);
+
+    elem.appendChild(upperBlock);
+  });
