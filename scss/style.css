@@ -7,7 +7,7 @@
 }
 
 body {
-  cursor: url(https://mnogoblog.ru/cur116.cur), progress !important;
+  cursor: url("../cursor.cur"), progress !important;
 }
 
 * {
