@@ -6,7 +6,7 @@
   font-style: normal;
 }
 
-body {
+body, a {
   cursor: url("../cursor.cur"), progress !important;
 }
 
@@ -36,10 +36,52 @@ body {
   background-color: black;
   -webkit-box-shadow: 2px 2px 8px 0px #b1a16e;
           box-shadow: 2px 2px 8px 0px #b1a16e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
 }
 
-.wrapper .header > img {
+.wrapper .header .logo {
+  position: absolute;
+  height: 60px;
+  left: 12.5%;
+  top: 6%;
+  -webkit-box-shadow: 2px 2px 8px 0px #b1a16e;
+          box-shadow: 2px 2px 8px 0px #b1a16e;
+  padding: 6px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.wrapper .header .exit {
+  margin: auto 10px;
+  padding: 8px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: 80%;
+  color: white;
+}
+
+.wrapper .header .exit img {
+  height: 100%;
+}
+
+.wrapper .header > * {
+  -webkit-transition: all 0.38s ease-in-out;
+  transition: all 0.38s ease-in-out;
+  background-color: #b1a16e;
+  border-radius: 100%;
+}
+
+.wrapper .header > *:hover {
+  -webkit-filter: brightness(150%);
+          filter: brightness(150%);
 }
 
 .wrapper .contentWrapper {
@@ -78,6 +120,7 @@ body {
       flex-basis: 25%;
   overflow: auto;
   margin: 5px auto;
+  padding-top: 25px;
 }
 
 .wrapper .contentWrapper .mediaBlock > div > p {
@@ -224,6 +267,9 @@ body {
 @media screen and (max-width: 900px) {
   .wrapper {
     overflow-y: scroll;
+  }
+  .wrapper .header .logo {
+    left: 50%;
   }
   .wrapper .contentWrapper {
     -webkit-box-orient: vertical;
