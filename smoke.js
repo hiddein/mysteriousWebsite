@@ -4,7 +4,7 @@ var particlesPerPuff = 1200;
 // Задержка между появлением соседних частиц (мс.)
 var particleDelay = 50;
 // Картинка для отображения одной частицы 
-var img = '/img/smoke_part.png';
+var img = '../../img/smoke_part.png';
 
 pCollection = new Array();
 var smokeImage = new Image();

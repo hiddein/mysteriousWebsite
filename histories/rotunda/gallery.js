@@ -60,8 +60,8 @@ function randBetween(n1, n2) {
 function appendPicToGallery()
 {
 	// Настройки откуда брать фотки
-	const previewDir = "/img/rotunda/fancyboxGallery/thumbs/";
-	const fullDir = "/img/rotunda/fancyboxGallery/original/";
+	const previewDir = "../../img/rotunda/fancyboxGallery/thumbs/";
+	const fullDir = "../../img/rotunda/fancyboxGallery/original/";
 	// Количество картинок, названия фоток цифрами по порядку от 1
 	const pitureCount = 20;
 
