@@ -207,7 +207,7 @@ body, a {
                     margin: 10px auto;
                 }
 
-                & > img {
+                & > img, iframe {
                     max-height: 80vh;
                     max-width: 100%;
                     display: block;

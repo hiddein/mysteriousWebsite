@@ -241,7 +241,7 @@ body, a {
   margin: 10px auto;
 }
 
-.wrapper .contentWrapper .rigthBlock .content > img {
+.wrapper .contentWrapper .rigthBlock .content > img, .wrapper .contentWrapper .rigthBlock .content iframe {
   max-height: 80vh;
   max-width: 100%;
   display: block;
