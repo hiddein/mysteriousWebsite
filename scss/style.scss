@@ -75,10 +75,10 @@ body, a {
             transition: all 0.38s ease-in-out;
             background-color: #b1a16e;
             border-radius: 100%;
-        }
 
-        & > *:hover {
-            filter: brightness(150%);
+            &:hover {
+                filter: brightness(150%);
+            }
         }
     }
     
@@ -156,14 +156,14 @@ body, a {
                             color: #b1a16e;
                             border: 5px #b1a16e solid;
                         }
-                    }
 
-                    .linkButton:hover {
-                        opacity: 100%;
+                        &:hover {
+                            opacity: 100%;
 
-                        div:hover {
-                            background-color: #b1a16e;
-                            color: white;
+                            div:hover {
+                                background-color: #b1a16e;
+                                color: white;
+                            }
                         }
                     }
                 }
@@ -279,7 +279,6 @@ body, a {
                 }
 
                 .content {
-
                     // Для размещения нескольких изображений в ряд
                     .imageBlock {
                         flex-wrap: nowrap;
@@ -319,9 +318,6 @@ body, a {
 
 /* Main page */
 .mainPage_wrapper {
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
     background: black url(/img/background.jpg) repeat 50% 0px;
     width: 100%;
     height: 100vh;
@@ -331,8 +327,6 @@ body, a {
     .mainPage_header {
         font-family: "Franklin Gothic Medium";
         color: #b1a16e;
-        // color: white;
-        // margin: 20px auto;
         width: 100%;
         height: 8%;
         text-align: end;
@@ -349,12 +343,12 @@ body, a {
             align-items: center;
             position: absolute;
             height: 80px;
-            left: 12.5%;
+            left: 5%;
             top: 8%;
             box-shadow: 2px 2px 10px 2px #b1a16e;
             padding: 0 20px;
             text-align: center;
-            transform: translate(-50%, -50%);
+            transform: translate(0, -50%);
             border-radius: 40px;
 
             img {
@@ -369,20 +363,24 @@ body, a {
 
         & > * {
             transition: all 0.38s ease-in-out;
+
+            &:hover {
+                filter: brightness(170%);
+            }
+        }
+
+        .horrorText {
+            overflow: hidden;
+            white-space: nowrap;
         }
 
         em {
             transition: all 2s ease-in-out;
-        }
-
-        & > *:hover {
-            filter: brightness(170%);
-        }
-
-        em:hover{
-            // filter: drop-shadow(16px 16px 10px white) ;
-            filter: blur(5px);
-            transition: all 0.38s ease-in-out;
+            
+            &:hover {
+                filter: drop-shadow(16px 16px 10px white) blur(2px);
+                transition: all 0.38s ease-in-out;
+            }
         }
     }
 
@@ -390,16 +388,11 @@ body, a {
         overflow: auto;
         height: 92%;
 
-
-        .mainContentTitle {
-            color: burlywood;
-        }
-
         .mainPage_mapWrapper {
-            margin: 10px;
-            // width: 80%;
-            // height: 90%;
-            min-width: 800px;
+
+            margin: 15px;
+            margin-top: 25px;
+            min-width: 950px;
         }
 
         .banner {
@@ -418,9 +411,36 @@ body, a {
 
 }
 
-.hover_group:hover {
-    opacity: 1;
-  }
+@media screen and (max-width: 900px) {
+    .mainPage_wrapper {
+    
+        .mainPage_header {
+    
+            .mainPage_logo {
+                height: 60px;
+            }
+        }
+
+        .mainPage_contentWrapper {
+            .mainPage_mapWrapper {
+                margin-top: 45px;
+            }
+        }
+    }
+}
+
+.svgtriangle {
+    filter: drop-shadow(2px 2px 5px white);
+}
+
+.hover_group {
+    * {
+        filter: brightness(0) drop-shadow(1px 1px 1px white);
+    }
+    &:hover {
+        opacity: 1;
+    }
+}
   
   #projectsvg svg {
     display: inline-block;
