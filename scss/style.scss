@@ -1,3 +1,14 @@
+@font-face {
+	font-family: "Franklin Gothic Medium";
+	src: url("../fonts/franklin-gothic-medium.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+body, a {
+    cursor: url("../cursor.cur"), progress !important;
+}
+
 * {
     font-family: 'Palatino Linotype', Times, serif;
     padding: 0;
@@ -8,6 +19,18 @@
 
 ::-webkit-scrollbar {
     width: 0;
+}
+
+.line, .horizontalLine {
+    width: 5px;
+    background: radial-gradient(#b1a16e, rgba(0, 0, 0, 0));
+    border-radius: 30%;
+}
+
+.horizontalLine {
+    height: 5px;
+    width: 90%;
+    margin: auto;
 }
 
 .wrapper {
@@ -22,9 +45,40 @@
         height: 6%;
         background-color: rgba($color: rgb(0, 0, 0), $alpha: 1);
         box-shadow: 2px 2px 8px 0px #b1a16e;
+        display: flex;
+        align-items: center;
+        justify-content: end;
 
-        & > img {
+        .logo {
+            position: absolute;
+            height: 60px;
+            left: 12.5%;
+            top: 6%;
+            box-shadow: 2px 2px 8px 0px #b1a16e;
+            padding: 6px;
+            transform: translate(-50%, -50%);
+        }
+
+        .exit {
+            margin: auto 10px;
+            padding: 8px;
+            box-sizing: border-box;
             height: 80%;
+            color:white;
+            
+            img {
+                height: 100%;
+            }
+        }
+        
+        & > * {
+            transition: all 0.38s ease-in-out;
+            background-color: #b1a16e;
+            border-radius: 100%;
+
+            &:hover {
+                filter: brightness(150%);
+            }
         }
     }
     
@@ -39,27 +93,86 @@
             color:rgb(180, 180, 180);
         }
 
+        h1, h2 {
+            color: #b1a16e;
+            margin-top: 15px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.3em;
+        }
+
+        h2 {
+            font-size: 1.1em;
+            text-decoration: underline;
+        }
+
         .mediaBlock {
             flex-basis: 25%;
             overflow: auto;
+            margin: 5px auto;
+            padding-top: 25px;
 
-            & > * {
-                width: 90%;
-                display: block;
-                margin: 5% auto;
+            & > div {
+
+                & > p {
+                    text-align: center;
+                    margin-top: 0;
+                    color: #b1a16e;
+                    font-size: 13pt;
+                }
+
+                & > * {
+                    width: 90%;
+                    display: block;
+                    margin: 15px auto 0;
+                }
+                // Оформление ссылок на внешние ресурсы
+                a {
+                    position: relative;
+
+                    img {
+                        max-width: 100%;
+                        height: 100%;
+                    }
+
+                    .linkButton {
+                        background-color: rgba(0, 0, 0, 0.8);
+                        opacity: 0;
+                        transition: all 0.38s ease-in-out;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        div {
+                            padding: 10px;
+                            transition: all 0.38s ease-in-out;
+                            color: #b1a16e;
+                            border: 5px #b1a16e solid;
+                        }
+
+                        &:hover {
+                            opacity: 100%;
+
+                            div:hover {
+                                background-color: #b1a16e;
+                                color: white;
+                            }
+                        }
+                    }
+                }
             }
-        }
-
-        .line {
-            width: 5px;
-            background: radial-gradient(#b1a16e, rgba(0, 0, 0, 0));
-            border-radius: 30%;
         }
 
         .rigthBlock {
             flex-basis: 75%;
             overflow-y: scroll;
-            height: 100%;
             scrollbar-width: thin;
             scrollbar-color: #b1a16e #b4b4b4;
             
@@ -80,27 +193,104 @@
                 align-items: center;
                 justify-content: center;
                 font-size: 48px;
-                color: #b1a16e
+                color: #b1a16e;
+                text-align: center;
+                line-height: 1.2;
             }
 
             .content {
                 font-size: 14pt;
                 text-align: justify;
-                height: 100%;
-                
-                & > p {
-                    padding: 10px 15px;
+                padding: 0 15px;
+
+                & > * {
+                    margin: 10px auto;
                 }
 
-                img {
-                    max-height: 50%;
-                    margin: 5px auto;
+                & > img {
+                    max-height: 80vh;
+                    max-width: 100%;
                     display: block;
-                    border-radius: 5%;
+                    border-radius: 10px;
+                }
+
+                // Для размещения нескольких изображений в ряд
+                .imageBlock {
+                    max-height: 50vh;
+                    border-radius: 10px;
+                    display: flex;
+                    justify-content: space-between;
+
+                    & > * {
+                        object-fit: cover;
+                    }
                 }
             }
         }
         
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .wrapper {
+        overflow-y: scroll;
+
+        .header {
+            .logo {
+                left: 50%;
+            }
+        }
+
+        .contentWrapper {
+            flex-direction: column;
+            height: auto;
+
+            .mediaBlock {
+                display: flex;
+                align-items: stretch;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                
+                & > * {
+                    flex: 0 0 40%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+
+                    & > *:not(p) {
+                        border-bottom: #b1a16e 2px solid;
+                        border-top: #b1a16e 2px solid;
+                        flex-grow: 1;
+                    }
+                }
+            }
+
+            .line {
+                height: 5px;
+                width: 90%;
+                margin: auto;
+            }
+
+            .rigthBlock {
+                overflow-y: hidden;
+
+                .mainPageTitle {
+                    font-size: 40px;
+                }
+
+                .content {
+                    // Для размещения нескольких изображений в ряд
+                    .imageBlock {
+                        flex-wrap: nowrap;
+                        overflow-x: auto;
+
+                        & > * {
+                            flex: 0 0 80%;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -125,3 +315,163 @@
     height: 150px;
     background: radial-gradient(rgba(255,255,255,0.2) 0%, transparent 70%);
 }
+
+/* Main page */
+.mainPage_wrapper {
+    background: black url(/img/background.jpg) repeat 50% 0px;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+    .mainPage_header {
+        font-family: "Franklin Gothic Medium";
+        color: #b1a16e;
+        width: 100%;
+        height: 8%;
+        text-align: end;
+        letter-spacing: 0.8em;
+        font-size: 30pt;
+        background-color: black;
+        box-shadow: 2px 2px 8px 0px #b1a16e;
+        text-shadow: 2px 4px 10px #b1a16e;
+
+        .mainPage_logo {
+            background-color: black;
+            letter-spacing: initial;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            height: 80px;
+            left: 5%;
+            top: 8%;
+            box-shadow: 2px 2px 10px 2px #b1a16e;
+            padding: 0 20px;
+            text-align: center;
+            transform: translate(0, -50%);
+            border-radius: 40px;
+
+            img {
+                height: 100%;
+            }
+
+            p {
+                color: white;
+                font-size: 16pt;
+            }
+        }
+
+        & > * {
+            transition: all 0.38s ease-in-out;
+
+            &:hover {
+                filter: brightness(170%);
+            }
+        }
+
+        .horrorText {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        em {
+            transition: all 2s ease-in-out;
+            
+            &:hover {
+                filter: drop-shadow(16px 16px 10px white) blur(2px);
+                transition: all 0.38s ease-in-out;
+            }
+        }
+    }
+
+    .mainPage_contentWrapper {
+        overflow: auto;
+        height: 92%;
+
+        .mainPage_mapWrapper {
+
+            margin: 15px;
+            margin-top: 25px;
+            min-width: 950px;
+        }
+
+        .banner {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+            width: 90%;
+            max-width: 600px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    .mainPage_wrapper {
+    
+        .mainPage_header {
+    
+            .mainPage_logo {
+                height: 60px;
+            }
+        }
+
+        .mainPage_contentWrapper {
+            .mainPage_mapWrapper {
+                margin-top: 45px;
+            }
+        }
+    }
+}
+
+.svgtriangle {
+    filter: drop-shadow(2px 2px 5px white);
+}
+
+.hover_group {
+    transition: all 0.38s ease-in-out;
+
+    * {
+        filter: brightness(0) drop-shadow(1px 1px 1px white);
+    }
+    &:hover {
+        opacity: 1;
+    }
+}
+  
+  #projectsvg svg {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+/* Для fancybox галереи */
+.boardGallery {
+    height: 580px;
+    position: relative;    
+    
+    .pic {
+        position: absolute;
+        border: 5px solid #EEEEEE;
+        border-bottom: 18px solid #eeeeee;
+        box-shadow: 2px 2px 3px #333333;
+
+        * {
+            width: 100px;
+            height: 100px;
+            overflow: hidden; 
+        }
+
+        a {
+            text-indent: -999px;
+            display: block;
+        }
+    }
+}
+
