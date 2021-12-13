@@ -474,6 +474,11 @@ body, a {
           filter: drop-shadow(2px 2px 5px white);
 }
 
+.hover_group {
+  -webkit-transition: all 0.38s ease-in-out;
+  transition: all 0.38s ease-in-out;
+}
+
 .hover_group * {
   -webkit-filter: brightness(0) drop-shadow(1px 1px 1px white);
           filter: brightness(0) drop-shadow(1px 1px 1px white);

@@ -434,6 +434,8 @@ body, a {
 }
 
 .hover_group {
+    transition: all 0.38s ease-in-out;
+
     * {
         filter: brightness(0) drop-shadow(1px 1px 1px white);
     }
