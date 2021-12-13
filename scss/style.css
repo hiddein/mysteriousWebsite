@@ -132,6 +132,15 @@ body, a {
       flex-basis: 25%;
   overflow: auto;
   margin: 5px auto;
+}
+
+.wrapper .contentWrapper .mediaBlock > div > p {
+  text-align: center;
+  margin-top: 0;
+  color: #b1a16e;
+  font-size: 13pt;
+}
+
   padding-top: 25px;
 }
 
@@ -249,7 +258,6 @@ body, a {
 }
 
 .wrapper .contentWrapper .rigthBlock .content .imageBlock {
-  max-height: 50vh;
   border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -260,6 +268,9 @@ body, a {
 }
 
 .wrapper .contentWrapper .rigthBlock .content .imageBlock > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -268,6 +279,7 @@ body, a {
   .wrapper {
     overflow-y: scroll;
   }
+
   .wrapper .header .logo {
     left: 50%;
   }
@@ -293,6 +305,7 @@ body, a {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 40%;
             flex: 0 0 40%;
+
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -494,6 +507,12 @@ body, a {
   top: 0;
   left: 0;
 }
+
+.content iframe {
+  margin: 0 auto;
+  display:block;
+}
+
 
 /* Для fancybox галереи */
 .boardGallery {
