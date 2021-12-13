@@ -22,6 +22,18 @@ body, a {
   width: 0;
 }
 
+.line, .horizontalLine {
+  width: 5px;
+  background: radial-gradient(#b1a16e, rgba(0, 0, 0, 0));
+  border-radius: 30%;
+}
+
+.horizontalLine {
+  height: 5px;
+  width: 90%;
+  margin: auto;
+}
+
 .wrapper {
   background: black url(/img/background.jpg) repeat 50% 0px;
   width: 100%;
@@ -181,18 +193,6 @@ body, a {
 .wrapper .contentWrapper .mediaBlock > div a .linkButton:hover div:hover {
   background-color: #b1a16e;
   color: white;
-}
-
-.wrapper .contentWrapper .line, .wrapper .contentWrapper .horizontalLine {
-  width: 5px;
-  background: radial-gradient(#b1a16e, rgba(0, 0, 0, 0));
-  border-radius: 30%;
-}
-
-.wrapper .contentWrapper .horizontalLine {
-  height: 5px;
-  width: 90%;
-  margin: auto;
 }
 
 .wrapper .contentWrapper .rigthBlock {
@@ -356,16 +356,6 @@ body, a {
 
 /* Main page */
 .mainPage_wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   background: black url(/img/background.jpg) repeat 50% 0px;
   width: 100%;
   height: 100vh;
@@ -375,17 +365,97 @@ body, a {
 
 .mainPage_wrapper .mainPage_header {
   font-family: "Franklin Gothic Medium";
-  color: white;
-  margin: 20px auto;
-  font-size: 30px;
+  color: #b1a16e;
+  width: 100%;
+  height: 8%;
+  text-align: end;
+  letter-spacing: 0.8em;
+  font-size: 30pt;
+  background-color: black;
+  -webkit-box-shadow: 2px 2px 8px 0px #b1a16e;
+          box-shadow: 2px 2px 8px 0px #b1a16e;
+  text-shadow: 2px 4px 10px #b1a16e;
 }
 
-.mainPage_wrapper .mainPage_mapWrapper {
-  width: 80%;
+.mainPage_wrapper .mainPage_header .mainPage_logo {
+  background-color: black;
+  letter-spacing: initial;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  height: 80px;
+  left: 12.5%;
+  top: 8%;
+  -webkit-box-shadow: 2px 2px 10px 2px #b1a16e;
+          box-shadow: 2px 2px 10px 2px #b1a16e;
+  padding: 0 20px;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 40px;
+}
+
+.mainPage_wrapper .mainPage_header .mainPage_logo img {
+  height: 100%;
+}
+
+.mainPage_wrapper .mainPage_header .mainPage_logo p {
+  color: white;
+  font-size: 16pt;
+}
+
+.mainPage_wrapper .mainPage_header > * {
+  -webkit-transition: all 0.38s ease-in-out;
+  transition: all 0.38s ease-in-out;
+}
+
+.mainPage_wrapper .mainPage_header em {
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+}
+
+.mainPage_wrapper .mainPage_header > *:hover {
+  -webkit-filter: brightness(170%);
+          filter: brightness(170%);
+}
+
+.mainPage_wrapper .mainPage_header em:hover {
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  -webkit-transition: all 0.38s ease-in-out;
+  transition: all 0.38s ease-in-out;
+}
+
+.mainPage_wrapper .mainPage_contentWrapper {
+  overflow: auto;
+  height: 92%;
 }
 
 .mainPage_wrapper .mainPage_contentWrapper .mainContentTitle {
   color: burlywood;
+}
+
+.mainPage_wrapper .mainPage_contentWrapper .mainPage_mapWrapper {
+  margin: 10px;
+  min-width: 800px;
+}
+
+.mainPage_wrapper .mainPage_contentWrapper .banner {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  width: 90%;
+  max-width: 600px;
+}
+
+.mainPage_wrapper .mainPage_contentWrapper .banner img {
+  width: 100%;
 }
 
 .hover_group:hover {
