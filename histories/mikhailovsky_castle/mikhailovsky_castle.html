@@ -7,63 +7,153 @@
     <link rel="stylesheet" href="../../scss/style.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Михайловский замок</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-
 <body>
 <div class="wrapper">
     <div class="header">
-
+      <img class="logo" src="/img/logo_small.png">
+        <a class="exit" href="/index.html"><img src="/img/exit.svg"></a>
     </div>
     <div class="contentWrapper">
         <div class="mediaBlock">
+            <h1>&lt;- Дополнительный материал -&gt;</h1>
             <div>
-                <iframe src="https://www.youtube.com/embed/Lt-cDId-RLc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/pZ-24Rvr_uE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p>Прогулка по Михайловскому замку</p>
             </div>
             <div>
-                <iframe src="https://www.youtube.com/embed/4EoUz39nPMM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/VzY-dNr4c5I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p><p>Парадные залы Михайловского замка</p></p>
             </div>
             <div>
-                <iframe src="https://www.youtube.com/embed/Lt-cDId-RLc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div>
-                <iframe src="https://www.youtube.com/embed/4EoUz39nPMM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div>
-                <iframe src="https://www.youtube.com/embed/Lt-cDId-RLc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div>
-                <iframe src="https://www.youtube.com/embed/4EoUz39nPMM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+              <a href="https://ru.wikipedia.org/wiki/Михайловский_замок">
+                  <img src="wiki.jpg">
+              </a>
+              <p>Википедия</p>
+          </div>
         </div>
         <div class="line"></div>
         <div class="rigthBlock">
-            <div class="mainPageTitle">Легенда о призраке Михайловского дворца</div>
+            <div class="mainPageTitle">Михайловский дворец</div>
             <div class="content">
-                <img src="castle_out_1.jpg">
+                <!--карусель-->
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                      <li data-target="#myCarousel" data-slide-to="1"></li>
+                      <li data-target="#myCarousel" data-slide-to="2"></li>
+                      <li data-target="#myCarousel" data-slide-to="3"></li>
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                      <div class="item active">
+                        <img src="castle_out_1.jpg" alt="Михайловский дворец 1">
+                      </div>
+                      <div class="item">
+                        <img src="castle_out_2.jpg" alt="Михайловский дворец 2">
+                      </div>
+                      <div class="item">
+                        <img src="castle_out_3.jpg" alt="Михайловский дворец 3">
+                      </div>
+                      <div class="item">
+                        <img src="castle_out_4.jpg" alt="Михайловский дворец 4">
+                      </div>
+                    </div>
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                      <span class="glyphicon glyphicon-chevron-left"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                      <span class="glyphicon glyphicon-chevron-right"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <!--карусель-->
                 <p>
-                    Михайловский замок – одно из самых загадочных зданий Петербурга, с которым связана зловещая и трагическая 
-                    тайна русской истории: убийство императора Павла I. Согласно городской легенде, призрак убитого царя 
-                    до сих пор обитает в стенах дворца.
-                </p>
-                <p>
+                    <h2>История</h2>
                     Построили Михайловский замок на месте обветшавшего Летнего дворца по указу Павла I. Здание было названо 
-                    в честь архангела Михаила, которого император считал своим покровителем.
-                </p>
-                <p>
-                    Архитекторам В. Бренне и В. Баженову царь повелел возвести «неприступный дворец-замок», который 
-                    государь планировал использовать в качестве постоянной резиденции. Павел I самолично нарисовал общий план замка.
-                </p>
-                <p>
+                    в честь архангела Михаила, которого император считал своим покровителем. Архитекторам В. Бренне 
+                    и В. Баженову царь повелел возвести «неприступный дворец-замок», который 
+                    государь планировал использовать в качестве постоянной резиденции. Павел I самолично нарисовал 
+                    общий план замка.
+                    <br><br>
+                    Первый камень в основание Михайловского замка был положен в феврале 1797 года. Строительные работы 
+                    форсировались: царь торопил В. Бренне, требуя как можно быстрее сдать объект. Даже в ночные часы на 
+                    освещенной кострами площадке трудились сотни человек. Всего к строительству было привлечено 6000 рабочих.
+                    Михайловский замок обошелся казне примерно в 4 млн. рублей. Архитекторы постоянно жаловались на 
+                    недостаток материалов. Император позволил рабочим использовать мрамор и гранит со стройки Исаакиевского 
+                    собора.
+                    <br><br>
                     Замок Павла I отличается уникальным, в чем-то символичным, цветом: его стены бледно-красные. 
                     По легенде, любовница императора Анна Лопухина на балу уронила перчатку. Царь подобрал ее и сказал,  
                     что теперь он знает, как должен выглядеть его будущий дворец.
-                </p>
-                <img src="castle_in_1.jpg"> 
-                <p>
+                    <br><br>
                     Парадные помещения дворца, спальни и кабинеты были отделаны роскошно, но, как рассказывали современники, 
                     перемещаться по замку было крайне неудобно из-за огромного количества лестничных проемов и коридоров. 
                     Строительные работы проводились поспешно, надлежащий уровень теплозащиты не был достигнут. В результате 
-                    жители Михайловского замка страдали от невероятной сырости.
+                    жители Михайловского замка страдали от невероятной сырости. Камины во дворце были постоянно растоплены,
+                     но следы плесени на стенах были заметны даже в главной зале. В бесконечных коридорах замка дул ветер 
+                     и стоял туман. Путешествовать по переплетениям переходов приходилось с канделябром или масляной лампой.
+                    <!--карусель-->
+                    <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                      <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+                      <li data-target="#myCarousel2" data-slide-to="1"></li>
+                      <li data-target="#myCarousel2" data-slide-to="2"></li>
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                      <div class="item active">
+                        <img src="castle_in_1.jpg" alt="Михайловский дворец 1">
+                      </div>
+                      <div class="item">
+                        <img src="castle_in_2.jpg" alt="Михайловский дворец 2">
+                      </div>
+                      <div class="item">
+                        <img src="castle_in_3.jpg" alt="Михайловский дворец 3">
+                      </div>
+                    </div>
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel2" data-slide="prev">
+                      <span class="glyphicon glyphicon-chevron-left"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel2" data-slide="next">
+                      <span class="glyphicon glyphicon-chevron-right"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                    </div>
+                    <!--карусель-->
+                </p>
+                <p>
+                    <h2>Легенды</h2>
+                    Мечта императора Павла I, возведенная на месте его рождения, стала местом его погибели. Как говорят, 
+                    минотаврам вовеки суждено погибать в воздвигнутых для них лабиринтах. Это случилось и с Павлом. 
+                    Всего сорок дней замок служил обителью для царской семьи, но ходят легенды, что дух императора 
+                    так и не смог покинуть это место - настолько сильно он был к нему привязан. Считается, что иногда 
+                    в окнах замка можно увидеть темную тень императора со свечой в руках, а в коридорах по ночам слышен 
+                    скрип половиц: это Павел бродит и ищет покой.
+                    <br><br>
+                    Еще одна легенда этого замка связана с сундуком рыцарей. 
+                    У Павла I было особое пристрастие - рыцари и их идеалы. Он даже был Великим магистром 
+                    Мальтийского ордена. И это его увлечение стало основой для другого мифа: якобы в подвалах 
+                    Михайловского замка хранится сундук мальтийских рыцарей, который император сам туда привез. 
+                    У того, кто найдет его, откроются сверхъестественные способности и появится дар прорицания.
+                </p>
+                <p>
+                    <h2>Как добраться</h2>
+                    Михайловский замок в Санкт-Петербурге расположен в самом центре Северной столицы по адресу  
+                    ул. Садовая, 2. Самым лучшим вариантом будет доехать до метро Гостиный двор и идти как показано на карте.
+                    <br>
+                    <p align="center">
+                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae46763839ca23ca5f85fd61c741b60660f8532e919b5f109d0766e81a23c3d52&amp;source=constructor" width="1100" height="450" frameborder="0"></iframe>
+                    </p>
                 </p>
             </div>
         </div>
