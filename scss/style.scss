@@ -343,6 +343,7 @@ body, a {
             letter-spacing: initial;
             display: flex;
             align-items: center;
+            width: max-content;
             position: absolute;
             height: 80px;
             left: 5%;
@@ -420,6 +421,12 @@ body, a {
     
             .mainPage_logo {
                 height: 60px;
+                transform: translate(-50%, -50%);
+                left: 50%;
+
+                p {
+                    font-size: 12pt;
+                }
             }
         }
 
