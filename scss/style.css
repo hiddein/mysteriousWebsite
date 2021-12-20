@@ -568,31 +568,31 @@ body, a {
 
 @-webkit-keyframes wave {
   0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
   50% {
-    -webkit-transform: translateX(-50);
-            transform: translateX(-50);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
   100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
 }
 
 @keyframes wave {
   0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
   50% {
-    -webkit-transform: translateX(-50);
-            transform: translateX(-50);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
   100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
 }
 /*# sourceMappingURL=style.css.map */
