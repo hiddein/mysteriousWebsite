@@ -349,6 +349,7 @@ body, a {
             letter-spacing: initial;
             display: flex;
             align-items: center;
+            width: max-content;
             position: absolute;
             height: 80px;
             left: 5%;
@@ -426,6 +427,12 @@ body, a {
     
             .mainPage_logo {
                 height: 60px;
+                transform: translate(-50%, -50%);
+                left: 50%;
+
+                p {
+                    font-size: 12pt;
+                }
             }
         }
 
@@ -512,10 +519,10 @@ body, a {
     bottom: 0;
     animation: wave 20s -1s linear infinite;
     opacity: 0.5;
-}
-
-@keyframes wave {
-    0% {transform: translateX(0);}
-    50% {transform: translateX(-50);}
-    100% {transform: translateX(0);}
-}
+  }
+  
+  @keyframes wave {
+      0% {transform: translateX(0%);}
+      50% {transform: translateX(-50%);}
+      100% {transform: translateX(0%);}
+  }
