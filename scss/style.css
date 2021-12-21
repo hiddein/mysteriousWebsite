@@ -250,6 +250,12 @@ body, a {
   border-radius: 10px;
 }
 
+.wrapper .contentWrapper .rigthBlock .content > .large{
+  max-height: 50vh;
+  object-fit: cover;
+  width: 100%;
+}
+
 .wrapper .contentWrapper .rigthBlock .content .imageBlock {
   max-height: 50vh;
   border-radius: 10px;

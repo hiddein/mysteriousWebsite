@@ -216,6 +216,12 @@ body, a {
                     border-radius: 10px;
                 }
 
+                & > .large{
+                    max-height: 50vh;
+                    object-fit: cover;
+                    width: 100%;
+                }
+
                 // Для размещения нескольких изображений в ряд
                 .imageBlock {
                     max-height: 50vh;
@@ -494,22 +500,22 @@ body, a {
     animation: wave 10s -3s linear infinite;
     transform: translate3d(0, 0, 0);
     opacity: 0.8;
-  }
-  
-  .wave:nth-of-type(2) {
+}
+
+.wave:nth-of-type(2) {
     bottom: 0;
     animation: wave 18s linear reverse infinite;
     opacity: 0.5;
-  }
-  
-  .wave:nth-of-type(3) {
+}
+
+.wave:nth-of-type(3) {
     bottom: 0;
     animation: wave 20s -1s linear infinite;
     opacity: 0.5;
-  }
-  
-  @keyframes wave {
-      0% {transform: translateX(0);}
-      50% {transform: translateX(-50);}
-      100% {transform: translateX(0);}
-  }
+}
+
+@keyframes wave {
+    0% {transform: translateX(0);}
+    50% {transform: translateX(-50);}
+    100% {transform: translateX(0);}
+}
